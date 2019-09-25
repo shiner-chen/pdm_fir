@@ -66,6 +66,7 @@ int main(int argc, char** argv)
 	while((i+PDM_FTL_TAPS/2) < Sz) {
 		fread(inBuf, 1, PDM_FTL_TAPS/2, fp);
 		for (j =0; j<PDM_FTL_TAPS/4; j++) {
+	/* the frequency of pdm is 1MHZ, the decimation factor is 64, so the pcm freq is 16K */
 #if 0
 		msb_in = (BitReverseTable256[inBuf[j] & 0xff] << 8) | 
 		         (BitReverseTable256[(inBuf[j] >> 8) & 0xff]); 
